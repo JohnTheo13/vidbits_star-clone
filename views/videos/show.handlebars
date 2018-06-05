@@ -1,0 +1,25 @@
+<div class="single-item-container" id="item-{{_id}}" >
+  <div class="single-item-card">
+    <div class="single-item-contents">
+      <div id="item-title" class="single-item-title">
+        {{title}}
+      </div>
+      <div class="single-item-video">
+        <iframe frameborder="0" allowfullscreen src="{{videoUrl}}"></iframe>
+      </div>
+      <div id="item-description" class="single-item-description">
+        {{description}}
+      </div>
+      <div class="single-item-navigation">
+        <a href="/">
+          <img class="back-arrow" src="../img/back.svg" alt="back">
+        </a>
+      <a href="/videos/{{_id}}/edit" id="update">
+          <div class="button update-button">
+            Update
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

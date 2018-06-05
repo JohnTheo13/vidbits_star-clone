@@ -1,0 +1,18 @@
+<form action="/videos" method="post" />
+  {{#with video.errors.title as |error|}}
+      <span class="error">{{error.message}}</span>
+  {{/with}}
+  <label class="form-label" for="title">Title</label>
+  <input id="title-input" name="title" maxlength="50" value="{{video.title}}"/>
+  {{#with video.errors.description as |error|}}
+      <span class="error">{{error.message}}</span>
+  {{/with}}
+  <label class="form-label" for="description">Description</label>
+  <textarea id="description-input" name="description">{{video.description}}</textarea>
+  {{#with video.errors.videoUrl as |error|}}
+      <span class="error">{{error.message}}</span>
+  {{/with}}
+  <label class="form-label" for="videoUrl">Image Url</label>
+  <input id="videoUrl-input" name="videoUrl" value="{{video.videoUrl}}"/>
+  <button type="submit">save video</button>
+</form>

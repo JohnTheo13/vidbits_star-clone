@@ -1,0 +1,39 @@
+<div id="videos-container" class="videos-container">
+  {{#each videos as |video|}}
+    <div id="video-{{video._id}}" class="video-card">
+      <a href="/videos/{{video._id}}" class="view">
+        <iframe class="video-player" src="{{video.videoUrl}}" frameborder="0" allowfullscreen></iframe>
+        <div class="image-overlay">
+          <div class="overlay-button delete-button">
+            <form id="delete-{{video._id}}" class="delete-form" action="/videos/{{video._id}}/delete" method="post">
+              <p>Delete</p>
+            </form>
+          </div>
+          <div class="overlay-button view-button">
+            <a href="/videos/{{video._id}}">
+              <p>View</p>
+            </a>
+          </div>
+        </div>
+        <div class="video-title">
+          <p>{{video.title}}</p>
+        </div>
+      </a>
+    </div>
+  {{/each}}
+</div>
+<div id="navigation">
+  <a href="/videos/create">
+    <div class="create-button">
+      <p>Add new video</p>
+    </div>
+  </a>
+</div>
+<script>
+  document.querySelectorAll('.delete-form')
+    .forEach(function(element) {
+      element.onclick = function(e) {
+        e.preventDefault();
+        element.submit()};
+    });
+</script>
